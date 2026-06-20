@@ -178,7 +178,21 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_250610_x64_01.exe", "电信", 1),
+    ("https://dldir1.qq.com/wemeet/WemeetClient_14.14.1.332_x64.exe", "电信", 1),
+    ("https://dl.softmgr.qq.com/im/pc/QQ_music/QQMusic_Setup_20.18.0.0.exe", "电信", 1),
+    ("https://dldir1.qq.com/wegame/WeGameMiniLoader_5.7.6.exe", "电信", 1),
+    ("https://dldir1.qq.com/qqdoc/tim/TIM3.4.8.22138_0x6c9d0c27.exe", "电信", 1),
+    ("https://dldir1.qq.com/wework/work_weixin/WeCom_4.1.36.6038.exe", "电信", 1),
+    ("https://mirrors.bfsu.edu.cn/centos/9-stream/BaseOS/x86_64/iso/CentOS-Stream-9-latest-x86_64-dvd1.iso", "教育网", 1),
+    ("https://mirrors.pku.edu.cn/centos/9-stream/BaseOS/x86_64/iso/CentOS-Stream-9-latest-x86_64-dvd1.iso", "教育网", 1),
+    ("https://cos.ap-beijing.myqcloud.com/", "联通", 1),
+    ("https://oss-cn-beijing.aliyuncs.com/", "联通", 1),
+    ("https://obs.cn-north-4.myhuaweicloud.com/", "联通", 1),
+    ("https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe", "电信", 1),
+    ("https://down.360safe.com/360/inst.exe", "电信", 1),
+    ("https://down.sandai.net/thunder11/XunLeiSetup_11.4.6.2080.exe", "电信", 1),],
     # ===== 上海 (72条) =====
     "上海": [
         ("https://mirrors.sjtug.sjtu.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 500),
@@ -318,7 +332,10 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-shanghai.myqcloud.com/", "电信", 1),
+    ("https://oss-cn-shanghai.aliyuncs.com/", "电信", 1),
+    ("https://obs.cn-east-3.myhuaweicloud.com/", "电信", 1),],
     # ===== 江苏 (85条) =====
     "江苏": [
         ("https://mirrors.nju.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 700),
@@ -483,7 +500,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://oss-cn-nanjing.aliyuncs.com/", "电信", 1),],
     # ===== 安徽 (72条) =====
     "安徽": [
         ("https://mirrors.ustc.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 500),
@@ -779,7 +797,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://oss-cn-hangzhou.aliyuncs.com/", "电信", 1),],
     # ===== 广东 (72条) =====
     "广东": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -931,7 +950,12 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://mirrors.dgut.edu.cn/centos/9-stream/BaseOS/x86_64/iso/CentOS-Stream-9-latest-x86_64-dvd1.iso", "教育网", 1),
+    ("https://cos.ap-guangzhou.myqcloud.com/", "电信", 1),
+    ("https://oss-cn-guangzhou.aliyuncs.com/", "电信", 1),
+    ("https://oss-cn-shenzhen.aliyuncs.com/", "电信", 1),
+    ("https://obs.cn-south-1.myhuaweicloud.com/", "电信", 1),],
     # ===== 重庆 (59条) =====
     "重庆": [
         ("https://mirrors.cqu.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -1058,7 +1082,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-chongqing.myqcloud.com/", "电信", 1),],
     # ===== 四川 (59条) =====
     "四川": [
         ("https://mirrors.uestc.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -1195,7 +1220,9 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-chengdu.myqcloud.com/", "电信", 1),
+    ("https://oss-cn-chengdu.aliyuncs.com/", "电信", 1),],
     # ===== 辽宁 (72条) =====
     "辽宁": [
         ("https://mirrors.dlut.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -1351,7 +1378,9 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-shenyang.myqcloud.com/", "联通", 1),
+    ("https://cos.ap-dalian.myqcloud.com/", "联通", 1),],
     # ===== 黑龙江 (59条) =====
     "黑龙江": [
         ("https://mirrors.hit.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -1637,7 +1666,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-xian.myqcloud.com/", "电信", 1),],
     # ===== 湖北 (59条) =====
     "湖北": [
         ("https://mirrors.hust.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -1774,7 +1804,9 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-wuhan.myqcloud.com/", "电信", 1),
+    ("https://oss-cn-wuhan-lb.aliyuncs.com/", "电信", 1),],
     # ===== 山东 (72条) =====
     "山东": [
         ("https://mirrors.qdu.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -1934,7 +1966,9 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-jinan.myqcloud.com/", "联通", 1),
+    ("https://cos.ap-qingdao.myqcloud.com/", "联通", 1),],
     # ===== 福建 (59条) =====
     "福建": [
         ("https://mirrors.xmu.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -2077,7 +2111,9 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-fuzhou.myqcloud.com/", "电信", 1),
+    ("https://cos.ap-xiamen.myqcloud.com/", "电信", 1),],
     # ===== 甘肃 (59条) =====
     "甘肃": [
         ("https://mirror.lzu.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -2215,7 +2251,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-lanzhou.myqcloud.com/", "电信", 1),],
     # ===== 贵州 (59条) =====
     "贵州": [
         ("https://mirrors.uestc.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -2348,7 +2385,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://obs.cn-southwest-2.myhuaweicloud.com/", "电信", 1),],
     # ===== 河北 (85条) =====
     "河北": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -2530,7 +2568,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-shijiazhuang.myqcloud.com/", "电信", 1),],
     # ===== 河南 (85条) =====
     "河南": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -2700,7 +2739,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-zhengzhou.myqcloud.com/", "电信", 1),],
     # ===== 湖南 (72条) =====
     "湖南": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -2850,7 +2890,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-changsha.myqcloud.com/", "电信", 1),],
     # ===== 江西 (72条) =====
     "江西": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -3001,7 +3042,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-nanchang.myqcloud.com/", "电信", 1),],
     # ===== 吉林 (72条) =====
     "吉林": [
         ("https://mirrors.hit.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -3152,7 +3194,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://mirrors.jlu.edu.cn/centos/9-stream/BaseOS/x86_64/iso/CentOS-Stream-9-latest-x86_64-dvd1.iso", "教育网", 1),],
     # ===== 山西 (72条) =====
     "山西": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -3438,7 +3481,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-kunming.myqcloud.com/", "电信", 1),],
     # ===== 广西 (59条) =====
     "广西": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -3576,7 +3620,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-nanning.myqcloud.com/", "电信", 1),],
     # ===== 海南 (59条) =====
     "海南": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -3712,7 +3757,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-haikou.myqcloud.com/", "电信", 1),],
     # ===== 内蒙古 (59条) =====
     "内蒙古": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -3850,7 +3896,9 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-ulanqab.myqcloud.com/", "联通", 1),
+    ("https://cos.ap-huhehaote.myqcloud.com/", "联通", 1),],
     # ===== 宁夏 (59条) =====
     "宁夏": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -3986,7 +4034,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-yinchuan.myqcloud.com/", "电信", 1),],
     # ===== 青海 (59条) =====
     "青海": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -4122,7 +4171,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-xining.myqcloud.com/", "电信", 1),],
     # ===== 西藏 (59条) =====
     "西藏": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -4256,7 +4306,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-lasa.myqcloud.com/", "电信", 1),],
     # ===== 新疆 (59条) =====
     "新疆": [
         ("https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "教育网", 400),
@@ -4392,7 +4443,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-wulumuqi.myqcloud.com/", "电信", 1),],
     # ===== 天津 =====  # 56条
     "天津": [
         ("https://mirrors.aliyun.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
@@ -4516,7 +4568,8 @@ PROVINCIAL_MIRRORS = {
         ("https://mirrors.sohu.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "联通", 400),
         ("https://mirrors.ctyun.cn/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
         ("https://p.cdn.10086.cn/d/NDY1/104.18.226.226_0_92489405505/2c94811f95a436680195b0106f780029.zip", "移动", 300),
-],
+
+    ("https://cos.ap-tianjin.myqcloud.com/", "联通", 1),],
     # ===== 台湾 =====  # 56条
     "台湾": [
         ("https://mirrors.aliyun.com/ubuntu-releases/24.04/ubuntu-24.04.4-desktop-amd64.iso", "电信", 400),
