@@ -1,4 +1,4 @@
-# Traffic Washer v5.4
+# Traffic Washer v5.5
 
 流量清洗工具，通过下载全球 CDN 大文件来消耗运营商带宽配额。
 
@@ -11,6 +11,8 @@
 - 🔄 **自动清理** — 域名级零流量清理、不可达整批拉黑
 - 📋 **运行日志** — 实时日志页面
 - 🐳 **Docker 部署** — 一键部署
+- 🧩 **代码拆分** — 链接池独立为 `url_pool.py`，便于维护
+- 🧹 **内存优化** — 流式下载、GC 定时清理、连接池优化
 
 ## 🚀 快速开始
 
@@ -29,8 +31,18 @@ docker-compose up -d
 
 ### 方式三：爱快路由部署
 
-1. 将 `app.py` 和 `Dockerfile` 上传到路由器
+1. 将 `app.py`、`url_pool.py` 和 `Dockerfile` 上传到路由器
 2. 构建并运行 Docker 容器
+
+## 📁 文件结构
+
+| 文件 | 说明 |
+|------|------|
+| `app.py` | Flask 主程序（路由 + 下载引擎） |
+| `url_pool.py` | 链接池数据与 URL 生成（4800+ 行） |
+| `Dockerfile` | Docker 构建文件 |
+| `docker-compose.yml` | Docker Compose 配置 |
+| `requirements.txt` | Python 依赖 |
 
 ## 📋 配置说明
 
@@ -56,6 +68,15 @@ docker-compose up -d
 | `/api/logs` | 获取日志 |
 
 ## 📈 版本历史
+
+### v5.5 (2026-06-20)
+- 链接池拆分为独立文件 `url_pool.py`，便于维护
+- 内存优化：流式下载自动释放连接、GC 定时清理
+- HTTPAdapter 重复注册修复（3→1）
+- 连接池优化：pool_connections=10, pool_maxsize=20
+- active_connections 上限 500→200
+- traffic 清理阈值更激进（>10000 清理）
+- 新增 memory_cleanup 线程（每 5 分钟 GC + 僵尸连接清理）
 
 ### v5.4 (2026-06-20)
 - 全量测速剔除：单线程 15 秒测速，<5MB/s 剔除
