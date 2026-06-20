@@ -1,4 +1,4 @@
-# Traffic Washer v5.5
+# Traffic Washer v5.6
 
 流量清洗工具，通过下载全球 CDN 大文件来消耗运营商带宽配额。
 
@@ -29,10 +29,30 @@ docker run -d --name traffic-washer --restart always -p 9999:9999 traffic-washer
 docker-compose up -d
 ```
 
-### 方式三：爱快路由部署
+### 方式三：爱快路由部署（tar 镜像导入）
 
-1. 将 `app.py`、`url_pool.py` 和 `Dockerfile` 上传到路由器
-2. 构建并运行 Docker 容器
+1. 从 [GitHub Releases](https://github.com/xingran8888/traffic-washer/releases/tag/v5.6) 下载 `traffic-washer-v5.6-docker.tar`
+2. 通过爱快管理页面或 SCP 上传 tar 文件到路由器
+3. SSH 登录爱快路由器，执行以下命令：
+
+```bash
+# 导入镜像
+docker load -i traffic-washer-v5.6-docker.tar
+
+# 启动容器
+docker run -d \
+  --name traffic-washer \
+  --restart always \
+  -p 9999:9999 \
+  traffic-washer:latest
+
+# 验证运行状态
+docker ps
+```
+
+4. 浏览器访问 `http://路由器IP:9999` 即可使用
+
+> **提示：** 导入成功后镜像会保留在路由器中，重启后自动恢复，无需重复导入。
 
 ## 📁 文件结构
 
@@ -68,6 +88,12 @@ docker-compose up -d
 | `/api/logs` | 获取日志 |
 
 ## 📈 版本历史
+
+### v5.6 (2026-06-20)
+- 热门 APP/游戏 CDN 采集（腾讯/网易/Steam/360/迅雷等）
+- 各省云厂商节点：腾讯云 COS 32 城市 + 阿里云 OSS 8 城市 + 华为云 OBS 6 城市
+- 链接池扩充至 4539 条
+- 提供 Docker 镜像 tar 包，支持爱快/群晖等 Docker 环境直接导入
 
 ### v5.5 (2026-06-20)
 - 链接池拆分为独立文件 `url_pool.py`，便于维护
