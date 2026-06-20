@@ -1,0 +1,37 @@
+# Temporary/patch files
+*.bak
+*.b64
+b64_*.txt
+generated_*.txt
+*.pyc
+__pycache__/
+.token
+
+# Patch scripts (not part of release)
+add_*.py
+fix_*.py
+patch_*.py
+full_*.py
+gen_*.py
+optimize_*.py
+perf_*.py
+remove_*.py
+restore_*.py
+rollback_*.py
+speed_test_*.py
+test_*.py
+update_*.py
+v5*.py
+export_helper.py
+city_*.py
+province_*.py
+provincial_*.py
+link_filter_*.py
+
+# JS deploy scripts
+*.js
+!upload_patch.js
+
+# Docker backup
+docker-compose.yml.bak
+app_server.py
