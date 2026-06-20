@@ -76,7 +76,7 @@ current_speed_bps = 0
 start_time = None
 active_threads = 0
 thread_config_changed = False
-active_connections = LimitedDict(maxlen=500)
+active_connections = LimitedDict(maxlen=200)
 
 # ====================== 本机IP信息（启动时自动检测）======================
 local_province = "未知"
@@ -5415,13 +5415,7 @@ def download_worker():
     global total_download_bytes
     tid = threading.current_thread().name
     session = requests.Session()
-    adapter = requests.adapters.HTTPAdapter(pool_connections=50, pool_maxsize=50, max_retries=1)
-    session.mount('http://', adapter)
-    session.mount('https://', adapter)
-    adapter = requests.adapters.HTTPAdapter(pool_connections=50, pool_maxsize=50, max_retries=1)
-    session.mount('http://', adapter)
-    session.mount('https://', adapter)
-    adapter = requests.adapters.HTTPAdapter(pool_connections=3, pool_maxsize=3, max_retries=1)
+    adapter = requests.adapters.HTTPAdapter(pool_connections=10, pool_maxsize=20, max_retries=1)
     session.mount('http://', adapter)
     session.mount('https://', adapter)
 
@@ -5447,13 +5441,11 @@ def download_worker():
             }
 
         try:
-            resp = session.get(target_url, stream=True, timeout=timeout_s, headers=OPTIMIZED_HEADERS)
-            resp.raise_for_status()
-            last_recv_time = time.time(); got_data = False
-            try:
+            with session.get(target_url, stream=True, timeout=timeout_s, headers=OPTIMIZED_HEADERS) as resp:
+                resp.raise_for_status()
+                last_recv_time = time.time(); got_data = False
                 for chunk in resp.iter_content(chunk_size=chunk_size):
                     if not running:
-                        resp.close()
                         with connections_lock:
                             active_connections.pop(tid, None)
                         return
@@ -5464,21 +5456,23 @@ def download_worker():
                         with traffic_lock:
                             url_session_traffic[target_url] = url_session_traffic.get(target_url, 0) + chunk_len
                             url_daily_traffic[target_url] = url_daily_traffic.get(target_url, 0) + chunk_len
-                        with connections_lock:
-                            active_connections[tid]["bytes"] = conn_bytes
-                            _now = time.time()
-                            _dt = _now - active_connections[tid].get("speed_ts", _now)
-                            if _dt >= 1.0:
-                                _delta = conn_bytes - active_connections[tid].get("last_bytes", 0)
-                                active_connections[tid]["speed_bps"] = _delta * 8 / _dt
+                        _now = time.time()
+                        _dt = _now - active_connections[tid].get("speed_ts", _now)
+                        if _dt >= 1.0:
+                            _delta = conn_bytes - active_connections[tid].get("last_bytes", 0)
+                            speed_bps = _delta * 8 / _dt
+                            with connections_lock:
+                                active_connections[tid]["bytes"] = conn_bytes
+                                active_connections[tid]["speed_bps"] = speed_bps
                                 active_connections[tid]["last_bytes"] = conn_bytes
                                 active_connections[tid]["speed_ts"] = _now
+                        else:
+                            with connections_lock:
+                                active_connections[tid]["bytes"] = conn_bytes
                         last_recv_time = time.time()
                     elif got_data:
                         if time.time() - last_recv_time >= stall_timeout_s:
                             break
-            finally:
-                resp.close()  # v5.4: 确保连接释放
             with fail_count_lock:
                 url_fail_count[target_url] = 0
         except Exception:
@@ -5491,13 +5485,25 @@ def download_worker():
         finally:
             with connections_lock:
                 active_connections.pop(tid, None)
-            # v5.4: chunk 局部变量在循环内已释放，连接结束后触发 GC
-            try:
-                del resp
-            except Exception:
-                pass
-            gc.collect()
             time.sleep(req_delay_ms / 1000)
+
+# ====================== v5.5: 定时内存清理 ======================
+def memory_cleanup():
+    """每5分钟强制GC + 清理过期数据"""
+    while True:
+        time.sleep(300)
+        gc.collect()
+        with traffic_lock:
+            expired = [k for k, v in url_session_traffic.items() if v == 0]
+            for k in expired[:1000]:
+                url_session_traffic.pop(k, None)
+        with connections_lock:
+            now = time.time()
+            zombie = [k for k, v in active_connections.items()
+                      if now - v.get("speed_ts", now) > 600]
+            for k in zombie:
+                active_connections.pop(k, None)
+        print(f"[内存] GC完成 | traffic:{len(url_session_traffic)} conn:{len(active_connections)}")
 
 # ====================== 自动清理 ======================
 def auto_cleanup_dead_links():
@@ -5551,9 +5557,14 @@ def auto_cleanup_dead_links():
             if len(url_fail_count) > 5000: url_fail_count.clear()
         with traffic_lock:
             if len(url_session_traffic) > 30000:
+                # v5.5: 更激进的清理，只保留最近有流量的
                 kept = {k: v for k, v in url_session_traffic.items() if v > 0}
                 url_session_traffic.clear()
                 url_session_traffic.update(kept)
+                if len(url_session_traffic) > 5000:
+                    items = list(url_session_traffic.items())
+                    url_session_traffic.clear()
+                    url_session_traffic.update(dict(items[len(items)//2:]))
 
 # ====================== 爬虫（全国各省）======================
 def auto_crawl_and_update():
@@ -5967,7 +5978,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica N
   <div class="page" id="page-about">
     <div class="page-title">版本说明</div>
     <div class="card">
-      <div class="info-row"><span class="info-label">版本号</span><span class="info-value">v5.4</span></div>
+      <div class="info-row"><span class="info-label">版本号</span><span class="info-value">v5.5</span></div>
   <div class="page" id="page-logs">
     <div class="page-title">运行日志</div>
     <div class="card">
@@ -6352,6 +6363,7 @@ def _start_background():
     threading.Thread(target=thread_pool_manager, daemon=True).start()
     threading.Thread(target=alive_checker, daemon=True).start()
     threading.Thread(target=blacklist_recovery, daemon=True).start()
+    threading.Thread(target=memory_cleanup, daemon=True).start()
     print("[启动] 冲刷任务已启动")
 
 @app.route("/stop")
